@@ -1,0 +1,170 @@
+
+  /animal:
+    get:
+     summary: Get all animals
+     tags: [animal]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/animal'
+ 
+    post:
+      summary: Create animal
+      tags: [animal]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/animal'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/animal'
+ 
+  /animal/{id}:
+    get:
+      summary: Get animal by id
+      tags: [animal]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/animal'
+ 
+    put:
+      summary: Edit animal
+      tags: [animal]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/animal'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/animal'
+ 
+    delete:
+      summary: Delete animal
+      tags: [animal]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/animal'
+
+  /user:
+    get:
+     summary: Get all users
+     tags: [user]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/user'
+ 
+    post:
+      summary: Create user
+      tags: [user]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+  /user/{id}:
+    get:
+      summary: Get user by id
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+    put:
+      summary: Edit user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/user'
+ 
+    delete:
+      summary: Delete user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+  components:
+    schemas:
+  
+      animal:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          name:
+            type: string
+          bd:
+            type: string
+          user:
+            type: string
+      user:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          name:
+            type: string
+          email:
+            type: string
+          gender:
+            type: string
+          age:
+            type: number
+          password:
+            type: string
